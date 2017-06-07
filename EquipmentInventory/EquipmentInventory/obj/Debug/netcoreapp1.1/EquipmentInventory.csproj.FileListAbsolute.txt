@@ -1,0 +1,9 @@
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.deps.json
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.runtimeconfig.json
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.runtimeconfig.dev.json
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.dll
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.pdb
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.csprojResolveAssemblyReference.cache
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.AssemblyInfo.cs
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.dll
+c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.pdb
