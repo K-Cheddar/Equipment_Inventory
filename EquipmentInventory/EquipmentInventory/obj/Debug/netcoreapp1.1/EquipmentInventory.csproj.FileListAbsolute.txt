@@ -7,3 +7,12 @@ c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentI
 c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.AssemblyInfo.cs
 c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.dll
 c:\users\kpc\documents\visual studio 2017\Projects\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.pdb
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.deps.json
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.runtimeconfig.json
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.runtimeconfig.dev.json
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.dll
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\bin\Debug\netcoreapp1.1\EquipmentInventory.pdb
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.AssemblyInfo.cs
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.dll
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.pdb
+C:\Users\schma\Desktop\Equipment_Inventory\EquipmentInventory\EquipmentInventory\obj\Debug\netcoreapp1.1\EquipmentInventory.csprojResolveAssemblyReference.cache

@@ -10919,15 +10919,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KPC\\.nuget\\packages\\": {}
+    "C:\\Users\\schma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\kpc\\documents\\visual studio 2017\\Projects\\EquipmentInventory\\EquipmentInventory\\EquipmentInventory.csproj",
+      "projectUniqueName": "C:\\Users\\schma\\Desktop\\Equipment_Inventory\\EquipmentInventory\\EquipmentInventory\\EquipmentInventory.csproj",
       "projectName": "EquipmentInventory",
-      "projectPath": "c:\\users\\kpc\\documents\\visual studio 2017\\Projects\\EquipmentInventory\\EquipmentInventory\\EquipmentInventory.csproj",
-      "outputPath": "c:\\users\\kpc\\documents\\visual studio 2017\\Projects\\EquipmentInventory\\EquipmentInventory\\obj\\",
+      "projectPath": "C:\\Users\\schma\\Desktop\\Equipment_Inventory\\EquipmentInventory\\EquipmentInventory\\EquipmentInventory.csproj",
+      "outputPath": "C:\\Users\\schma\\Desktop\\Equipment_Inventory\\EquipmentInventory\\EquipmentInventory\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

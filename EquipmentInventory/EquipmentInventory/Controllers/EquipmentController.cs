@@ -16,7 +16,7 @@ namespace EquipmentInventory.Controllers
 
         public EquipmentController(InventoryContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Equipments
@@ -54,14 +54,25 @@ namespace EquipmentInventory.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Quantity,Status,Description,Link,Location,Category")] Equipment equipment)
+        public async Task<IActionResult> Create([Bind("Name,Quantity,Status,Description,Link,Location,Category")] Equipment equipment)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(equipment);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    _context.Add(equipment);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
             }
+            catch (DbUpdateException)
+            {
+                //Log error
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    " Try again, and see if the problem persists " +
+                    "see your system administrator.");
+            }
+
             return View(equipment);
         }
 
@@ -84,40 +95,43 @@ namespace EquipmentInventory.Controllers
         // POST: Equipments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Quantity,Status,Description,Link,Location,Category")] Equipment equipment)
+        public async Task<IActionResult> EditPost(int? id)
         {
-            if (id != equipment.ID)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            var equipmentToUpdate = await _context.Equipment.SingleOrDefaultAsync(s => s.ID == id);
+            if (await TryUpdateModelAsync<Equipment>(
+                equipmentToUpdate, "",
+                s => s.Quantity, s => s.Description, s => s.Name,
+                s => s.Location, s => s.Status, s => s.Link,
+                s => s.Category
+                ))
             {
                 try
                 {
-                    _context.Update(equipment);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction("Index");
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateException)
                 {
-                    if (!EquipmentExists(equipment.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    //Log error
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists, " +
+                    "see your system administrator.");
                 }
-                return RedirectToAction("Index");
             }
-            return View(equipment);
+
+           
+            return View(equipmentToUpdate);
         }
 
         // GET: Equipments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
@@ -125,10 +139,18 @@ namespace EquipmentInventory.Controllers
             }
 
             var equipment = await _context.Equipment
+                .AsNoTracking()
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (equipment == null)
             {
                 return NotFound();
+            }
+            
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
             }
 
             return View(equipment);
@@ -139,10 +161,26 @@ namespace EquipmentInventory.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var equipment = await _context.Equipment.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Equipment.Remove(equipment);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            var equipment = await _context.Equipment
+                .AsNoTracking()
+                .SingleOrDefaultAsync(m => m.ID == id);
+
+            if (equipment == null)
+            {
+                return RedirectToAction("Index");
+            }
+            try
+            {
+                _context.Equipment.Remove(equipment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            catch (DbUpdateException)
+            {
+                //Log the error
+                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+            }
+
         }
 
         private bool EquipmentExists(int id)
